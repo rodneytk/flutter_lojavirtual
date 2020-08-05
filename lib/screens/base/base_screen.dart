@@ -9,7 +9,9 @@ class BaseScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Provider(
-      create: (_) => {PageManager(pageController)},
+      create: (_) {
+        return PageManager(pageController);
+      },
       child: PageView(
         controller: pageController,
         physics: const NeverScrollableScrollPhysics(),

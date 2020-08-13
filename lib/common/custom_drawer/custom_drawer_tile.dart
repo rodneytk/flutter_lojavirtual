@@ -12,6 +12,7 @@ class CustomDrawerTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final int currPage = context.watch<PageManager>().page;
+    final Color primaryColor = Theme.of(context).primaryColor;
 
     return InkWell(
       onTap: () {
@@ -26,14 +27,14 @@ class CustomDrawerTile extends StatelessWidget {
               child: Icon(
                 iconData,
                 size: 32,
-                color: currPage == page ? Colors.red : Colors.grey[700],
+                color: currPage == page ? primaryColor : Colors.grey[700],
               ),
             ),
             Text(
               title,
               style: TextStyle(
                 fontSize: 16,
-                color: currPage == page ? Colors.red : Colors.grey[700],
+                color: currPage == page ? primaryColor : Colors.grey[700],
               ),
             ),
           ],
